@@ -3,7 +3,7 @@ module Colorscheme
   class SplitComplementary < Colorscheme
     def initialize(color=nil, degrees=30)
       super(color)
-      @colors.push @source_color
+      @colors.push @source_color.to_rgb
       complementary = complementary(@source_color)
       analogous_to_complementary = analogous(complementary, degrees)
       @colors.push complementary
